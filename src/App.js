@@ -6,17 +6,17 @@ function App() {
     {
       id: "1",
       title: 'منوی کاربر ',  
-      value: 'false'
+      value: false
     },
     {
       id: "2",
       title: 'اطلاعات حساب کاربری',
-      value: 'true'
+      value: true
     },
     {
       id: "3",
       title: 'تغییر فونت',
-      value: 'true'
+      value: true
     },
   ]
   return (

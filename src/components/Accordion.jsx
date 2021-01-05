@@ -64,15 +64,14 @@ const SimpleAccordion = ({ checkboxes }) => {
             <AccordionDetails className={accordionDetails.root}>
               <div>
                 {
-                  checkboxes.map((checkbox, index) => {
-                    console.log(checkbox.value)
+                  checkboxes.map((checkbox, key) => {
                     return (
                       <div>
                         <FormControlLabel
                           style={{
                             padding: '2%'
                           }}
-                          key={index}
+                          key={key}
                           aria-label="Acknowledge"
                           control={<Checkbox color="default" checked={checkbox.value}/>}
                           label={checkbox.title}
