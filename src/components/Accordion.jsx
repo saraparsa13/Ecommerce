@@ -1,16 +1,16 @@
 import React from 'react'
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-import SettingsIcon from '@material-ui/icons/Settings';
-import Checkbox from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Divider from '@material-ui/core/Divider';
-import Button from '@material-ui/core/Button';
+import Accordion from '@material-ui/core/Accordion'
+import AccordionSummary from '@material-ui/core/AccordionSummary'
+import AccordionDetails from '@material-ui/core/AccordionDetails'
+import Typography from '@material-ui/core/Typography'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import Grid from '@material-ui/core/Grid'
+import { makeStyles } from '@material-ui/core/styles'
+import SettingsIcon from '@material-ui/icons/Settings'
+import Checkbox from '@material-ui/core/Checkbox'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import Divider from '@material-ui/core/Divider'
+import Button from '@material-ui/core/Button'
 
 const accordingStyles = makeStyles(() => ({
   root: {
@@ -19,23 +19,23 @@ const accordingStyles = makeStyles(() => ({
     width: 500,
     borderRadius: 3
   }
-}));
+}))
 const accordionSummaryStyles = makeStyles(() => ({
   root: {
     background: 'rgba(0,0,0,0.5)',
     borderRadius: 3
   }
-}));
+}))
 const accordionDetailsStyles = makeStyles(() => ({
   root: {
     display: 'flex',
     flexDirection: 'column'
   }
-}));
+}))
 
 const SimpleAccordion = ({ checkboxes }) => {
 
-  const according = accordingStyles();
+  const according = accordingStyles()
   const accordionDetails = accordionDetailsStyles()
   const accordionSummary = accordionSummaryStyles()
 
@@ -64,6 +64,8 @@ const SimpleAccordion = ({ checkboxes }) => {
             <AccordionDetails className={accordionDetails.root}>
               <div>
                 {
+                  checkboxes !== null &&
+                  checkboxes !== undefined &&
                   checkboxes.map((checkbox, key) => {
                     return (
                       <div>
@@ -73,7 +75,7 @@ const SimpleAccordion = ({ checkboxes }) => {
                           }}
                           key={key}
                           aria-label="Acknowledge"
-                          control={<Checkbox color="default" checked={checkbox.value}/>}
+                          control={<Checkbox color="default" defaultChecked={checkbox.value} />}
                           label={checkbox.title}
                         />
                       </div>
