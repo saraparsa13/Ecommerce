@@ -1,1 +1,1 @@
-# Eccomerce
+# Ecommerce
