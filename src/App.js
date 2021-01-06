@@ -21,7 +21,7 @@ function App() {
   ]
   return (
     <div className="App">
-      <Accordion checkboxes={items}/>
+      <Accordion items={items}/>
     </div>
   );
 }

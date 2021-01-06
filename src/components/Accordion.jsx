@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Accordion from '@material-ui/core/Accordion'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
@@ -33,11 +33,16 @@ const accordionDetailsStyles = makeStyles(() => ({
   }
 }))
 
-const SimpleAccordion = ({ checkboxes }) => {
+const SimpleAccordion = (props) => {
+  const [checked, setChecked] = useState()
 
   const according = accordingStyles()
   const accordionDetails = accordionDetailsStyles()
   const accordionSummary = accordionSummaryStyles()
+
+  const clickHandler = (e) => {
+    setChecked(e.target.checked)
+  }
 
   return (
     <div>
@@ -64,9 +69,9 @@ const SimpleAccordion = ({ checkboxes }) => {
             <AccordionDetails className={accordionDetails.root}>
               <div>
                 {
-                  checkboxes !== null &&
-                  checkboxes !== undefined &&
-                  checkboxes.map((checkbox, key) => {
+                  props.items !== null &&
+                  props.items !== undefined &&
+                  props.items.map((item, key) => {
                     return (
                       <div>
                         <FormControlLabel
@@ -75,8 +80,12 @@ const SimpleAccordion = ({ checkboxes }) => {
                           }}
                           key={key}
                           aria-label="Acknowledge"
-                          control={<Checkbox color="default" defaultChecked={checkbox.value} />}
-                          label={checkbox.title}
+                          control={
+                            <Checkbox color="default" 
+                            defaultChecked={item.value} 
+                            onClick={clickHandler} 
+                            checked={checked} />}
+                          label={item.title}
                         />
                       </div>
                     )
