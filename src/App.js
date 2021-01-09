@@ -21,7 +21,7 @@ function App() {
   ]
   return (
     <div className="App">
-      <Accordion items={items}/>
+      <Accordion onCheckchange={items} items={items}/>
     </div>
   );
 }
