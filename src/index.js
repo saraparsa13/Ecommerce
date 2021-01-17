@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Switch, Route } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+
 import './assets/styles/_index.scss';
-import App from './App';
 import { createMuiTheme } from '@material-ui/core/styles'
 import { ThemeProvider } from '@material-ui/styles'
 
+import indexRoutes from './routes/index'
 
 const THEME = createMuiTheme({
   typography: {
@@ -16,9 +19,20 @@ const THEME = createMuiTheme({
   }
 })
 
+const hist = createBrowserHistory()
+
 ReactDOM.render(
   <ThemeProvider theme={THEME}>
-    <App/>
+    <Router history={hist}>
+      <Switch>
+        {indexRoutes.map((prop, key) => {
+          return (
+            <Route exact path={prop.path} component={prop.component} key={key} />
+          )
+        })}
+      </Switch>
+    </Router>
+    {/* <App /> */}
   </ThemeProvider>,
   document.getElementById('root')
 );
