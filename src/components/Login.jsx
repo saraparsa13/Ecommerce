@@ -124,6 +124,22 @@ const typographyStyles = makeStyles((theme) => ({
   }
 }))
 
+const flexStyles = makeStyles(() => ({
+  root: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column'
+  }
+}))
+
+const divStyles = makeStyles(() => ({
+  root: {
+    width: '43%', 
+    marginBottom: '2%' 
+  }
+}))
+
 const Login = () => {
   const [formData, setFormData] = useState({
     username: 'لطفا نام کاربری خود را وارد نمایید',
@@ -137,6 +153,8 @@ const Login = () => {
   const textField = textFieldStyles()
   const formControlLabel = formControlLabelStyles()
   const typography = typographyStyles()
+  const flex = flexStyles()
+  const div = divStyles()
 
   const onSubmit = (e) => {
     console.log('hi')
@@ -173,9 +191,11 @@ const Login = () => {
             direction="column"
             justify="center"
             alignItems="center">
-            <div style={{ width: '43%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '2%' }}>
+            <div className={flex.root, div.root}>
               <img style={{ width: 100, height: 100 }} src={logo} alt="" />
-              <Typography className={typography.root} variant="h6">مدیریت گزارشات</Typography>
+              <Typography 
+                className={typography.root} 
+                variant="h6">مدیریت گزارشات</Typography>
             </div>
             <div>
               <form onSubmit={handleSubmit(onSubmit)}>
@@ -188,7 +208,10 @@ const Login = () => {
                     id="custom-css-outlined-input"
                     value={formData.username}
                     error={formData.username === ""}
-                    helperText={formData.username === "" ? 'نام کاربری را وارد نمایید' : ' '}
+                    helperText={
+                      formData.username === "" ? 
+                      'نام کاربری را وارد نمایید' :
+                      ' '}
                     onChange={onchangeHandler}
                     onClick={clickHandler}
                     name='username'
@@ -203,7 +226,10 @@ const Login = () => {
                     id="custom-css-outlined-input"
                     value={formData.password}
                     error={formData.password === ""}
-                    helperText={formData.password === "" ? 'رمز عبور را وارد نمایید' : ' '}
+                    helperText={
+                      formData.password === "" ?
+                      'رمز عبور را وارد نمایید' :
+                      ' '}
                     onChange={onchangeHandler}
                     onClick={clickHandler}
                     name='password'
@@ -218,14 +244,13 @@ const Login = () => {
                     label="به خاطر سپردن ورود من در این سیستم"
                   />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <div className={flex.root}>
                   <Button
                     type="submit"
                     className={button.root}
                     variant="contained">ورود</Button>
                 </div>
               </form>
-
             </div>
           </Grid>
           <Hidden smDown>
