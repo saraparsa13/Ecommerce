@@ -81,7 +81,7 @@ const SimpleAccordion = (props) => {
 
       const dataItems = prev;
       const foundItem = dataItems.filter(item => item.title === title);
-
+      
       if (foundItem.length > 0) {
         const foundIndex = dataItems.indexOf(foundItem);
         foundItem[0].value = value;

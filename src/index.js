@@ -32,7 +32,6 @@ ReactDOM.render(
         })}
       </Switch>
     </Router>
-    {/* <App /> */}
   </ThemeProvider>,
   document.getElementById('root')
 );

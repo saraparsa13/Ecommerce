@@ -7,6 +7,7 @@ const Home = () => {
       <ul>
         <li>/accordion</li>
         <li>/login</li>
+        <li>/treeview</li>
       </ul>
     </div>
   )

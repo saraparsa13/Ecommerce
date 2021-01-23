@@ -35,17 +35,17 @@ const config =
 };
 
 
-function AccordionView() {
-  const items =
-    [
-      { "value": true, "title": "Folder" },
-      { "value": true, "title": "Dashboard" },
-      { "value": true, "title": "DashboardGroup" },
-      { "value": true, "title": "Page" },
-      { "value": true, "title": "Report" },
-      { "value": false, "title": "DataModel" },
-      { "value": true, "title": "Project" }
-    ];
+const AccordionLoader = () => {
+  // const items =
+  //   [
+  //     { "value": true, "title": "Folder" },
+  //     { "value": true, "title": "Dashboard" },
+  //     { "value": true, "title": "DashboardGroup" },
+  //     { "value": true, "title": "Page" },
+  //     { "value": true, "title": "Report" },
+  //     { "value": false, "title": "DataModel" },
+  //     { "value": true, "title": "Project" }
+  //   ];
 
   return (
     <React.Fragment>
@@ -72,5 +72,5 @@ function AccordionView() {
   )
 }
 
-export default AccordionView;
+export default AccordionLoader;
 
